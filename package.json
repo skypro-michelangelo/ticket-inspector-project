@@ -49,10 +49,6 @@
   },
   "devDependencies": {
     "@storybook/react": "^6.3.12",
-    "@typescript-eslint/eslint-plugin": "^5.2.0",
-    "@typescript-eslint/parser": "^5.2.0",
-    "eslint": "^8.1.0",
-    "eslint-plugin-react": "^7.26.1",
     "prettier": "^2.4.1",
     "redux-devtools": "^3.7.0",
     "stylelint": "^14.0.1",
