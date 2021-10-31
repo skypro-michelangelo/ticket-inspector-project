@@ -28,6 +28,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "stylelint src/**/*.css && eslint ./src/",
+    "style:lint": "stylelint src/**/*.css",
+    "js:lint": "eslint ./src/",
     "lint:types": "tsc --noEmit",
     "prettier:check": "prettier --config ./.prettierrc.json --check src/**/*",
     "prepare": "husky install"
@@ -63,8 +65,10 @@
     "stylelint-processor-styled-components": "^1.10.0"
   },
   "lint-staged": {
-    "*.css": "stylelint --fix",
-    "*.{tsx,md}": "prettier --check"
+    "src/**/*.{tsx,css,html}": [
+      "npm run prettier:check",
+      "npm run lint"
+    ]
   },
   "husky": {
     "hooks": {
