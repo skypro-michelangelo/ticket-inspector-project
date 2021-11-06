@@ -27,7 +27,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "stylelint src/**/*.tsx && eslint ./src/"
+    "lint": "stylelint src/**/*.css && eslint ./src/",
+    "style:lint": "stylelint src/**/*.css",
+    "js:lint": "eslint ./src/",
+    "lint:types": "tsc --noEmit",
+    "prettier:check": "prettier --config --check \"src/**/*.{tsx,ts,css}\"",
+    "prettier:write": "prettier --config --write \"src/**/*.{tsx,ts,css}\""
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +54,8 @@
   },
   "devDependencies": {
     "@storybook/react": "^6.3.12",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
     "prettier": "2.4.1",
     "redux-devtools": "^3.7.0",
     "stylelint": "^14.0.1",
@@ -57,5 +64,11 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-prettier": "^1.2.0",
     "stylelint-processor-styled-components": "^1.10.0"
+  },
+  "lint-staged": {
+    "src/**/*.{tsx,ts,css}": [
+      "npm run prettier:check",
+      "npm run lint"
+    ]
   }
 }
