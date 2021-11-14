@@ -1,10 +1,16 @@
 import React from 'react';
 import './App.css';
+import { ButtonsBlock } from './components/ButtonsBlock/ButtonsBlock';
+import { ValidateTicket } from './components/pages/ValidateTicket';
 
 function App() {
+
   return (
-    <div className="App">
+    <div>
+      <ButtonsBlock/>
+    <ValidateTicket/>
     </div>
+    
   );
 }
 
